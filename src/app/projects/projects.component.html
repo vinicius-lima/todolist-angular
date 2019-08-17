@@ -1,4 +1,30 @@
-<p>
-  projects works!
-</p>
-<app-project></app-project>
+<div class="container">
+  <h1>Projects</h1>
+  <div class="row col-md-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Creation Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects">
+          <td>
+            <a class="btn btn-primary" routerLink="/project/{{ project.id }}">
+              {{ project.id }}
+            </a>
+          </td>
+          <td>{{ project.name }}</td>
+          <td>{{ project.author }}</td>
+          <td>{{ project.creationDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="btn btn-success">
+    Create project
+  </button>
+</div>
