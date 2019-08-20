@@ -1,0 +1,80 @@
+th {
+  width: 150px;
+}
+.panel {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border: 3px solid;
+  border-radius: 25px;
+}
+.panel-body {
+  height: 280px;
+  /* overflow-y: scroll; */
+}
+.status {
+  font-size: 30px;
+  margin-right: 5px;
+}
+.panel-green {
+  border-color: #5cb85c;
+}
+.panel-green > .panel-heading {
+  border-color: #5cb85c;
+  color: white;
+  background-color: #5cb85c;
+  border-radius: 20px;
+}
+.panel-green > a {
+  color: #5cb85c;
+}
+.panel-green > a:hover {
+  color: #3d8b3d;
+}
+.panel-red {
+  border-color: #d9534f;
+}
+.panel-red > .panel-heading {
+  border-color: #d9534f;
+  color: white;
+  background-color: #d9534f;
+  border-radius: 20px;
+}
+.panel-red > a {
+  color: #d9534f;
+}
+.panel-red > a:hover {
+  color: #b52b27;
+}
+.panel-yellow {
+  border-color: #f0ad4e;
+}
+.panel-yellow > .panel-heading {
+  border-color: #f0ad4e;
+  color: white;
+  background-color: #f0ad4e;
+  border-radius: 20px;
+}
+.panel-yellow > a {
+  color: #f0ad4e;
+}
+.panel-yellow > a:hover {
+  color: #df8a13;
+}
+.panel-gray {
+  border-color: #bfbfbf;
+}
+.panel-gray > .panel-heading {
+  border-color: #bfbfbf;
+  color: white;
+  background-color: #bfbfbf;
+  border-radius: 20px;
+}
+.panel-gray > a {
+  color: #bfbfbf;
+}
+.panel-yellow > a:hover {
+  color: #b0a9a9;
+}
+.panel-footer {
+  margin-left: 10px;
+}

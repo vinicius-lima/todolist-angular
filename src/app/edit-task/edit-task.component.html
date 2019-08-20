@@ -1,0 +1,82 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      Edit Task
+    </h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #taskForm="ngForm" autocomplete="off">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-book"></i>
+            </span>
+          </div>
+          <input
+            id="task-title"
+            name="task-title"
+            class="form-control"
+            placeholder="Title"
+            type="text"
+            [(ngModel)]="task.title"
+          />
+        </div>
+        <!-- input-group.// -->
+      </div>
+      <!-- form-group// -->
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-book"></i>
+            </span>
+          </div>
+          <select
+            id="task-status"
+            name="task-status"
+            [(ngModel)]="selectedStatus"
+          >
+            <option value="TODO">TODO</option>
+            <option value="DONE">DONE</option>
+            <option value="ONGOING">ONGOING</option>
+            <option value="ABANDONED">ABANDONED</option>
+          </select>
+        </div>
+        <!-- input-group.// -->
+      </div>
+      <!-- form-group// -->
+      <div class="form-group">
+        <div class="input-group">
+          <textarea
+            id="task-description"
+            name="task-description"
+            class="form-control"
+            placeholder="Description"
+            rows="5"
+            [(ngModel)]="task.description"
+          ></textarea>
+        </div>
+        <!-- input-group.// -->
+      </div>
+      <!-- form-group// -->
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success" (click)="editTask()">
+      Update
+    </button>
+  </div>
+</ng-template>
+
+<button class="btn btn-success" (click)="open(content)">
+  Edit
+</button>

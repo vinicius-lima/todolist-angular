@@ -31,7 +31,18 @@ export class ApiClientService {
     );
   }
 
-  deleteProject(projectId: number): Observable<any> {
+  createTask(task: Task): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Access-Control-Allow-Origin": "*"
+      }),
+      observe: "response" as "body"
+    };
+
+    return this.http.post<Task>(this.endpoints.tasks, task, httpOptions);
+  }
+
+  deleteProject(id: number): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         "Access-Control-Allow-Origin": "*"
@@ -40,9 +51,20 @@ export class ApiClientService {
     };
 
     return this.http.delete<Project>(
-      this.endpoints.projects + `/${projectId}`,
+      this.endpoints.projects + `/${id}`,
       httpOptions
     );
+  }
+
+  deleteTask(id: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Access-Control-Allow-Origin": "*"
+      }),
+      observe: "response" as "body"
+    };
+
+    return this.http.delete<Task>(this.endpoints.tasks + `/${id}`, httpOptions);
   }
 
   editProject(project: Project): Observable<any> {
@@ -60,6 +82,21 @@ export class ApiClientService {
     );
   }
 
+  editTask(task: Task): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Access-Control-Allow-Origin": "*"
+      }),
+      observe: "response" as "body"
+    };
+
+    return this.http.put<Task>(
+      this.endpoints.tasks + `/${task.id}`,
+      task,
+      httpOptions
+    );
+  }
+
   getProject(id: number): Observable<Project> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -71,6 +108,16 @@ export class ApiClientService {
       this.endpoints.projects + `/${id}`,
       httpOptions
     );
+  }
+
+  getTask(id: number): Observable<Task> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Access-Control-Allow-Origin": "*"
+      })
+    };
+
+    return this.http.get<Task>(this.endpoints.tasks + `/${id}`, httpOptions);
   }
 
   listProjects(): Observable<Project[]> {

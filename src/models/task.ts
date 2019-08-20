@@ -4,7 +4,7 @@ export interface Task {
   description?: string;
   author: string;
   status: string;
-  creatingDate: string;
+  creationDate: string;
   lastUpdate: string;
   projectId: number;
 }

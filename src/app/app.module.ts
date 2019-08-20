@@ -11,6 +11,8 @@ import { TaskComponent } from "./task/task.component";
 import { ProjectsComponent } from "./projects/projects.component";
 import { CreateProjectComponent } from "./create-project/create-project.component";
 import { DeleteProjectComponent } from './delete-project/delete-project.component';
+import { CreateTaskComponent } from './create-task/create-task.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DeleteProjectComponent } from './delete-project/delete-project.componen
     TaskComponent,
     ProjectsComponent,
     CreateProjectComponent,
-    DeleteProjectComponent
+    DeleteProjectComponent,
+    CreateTaskComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,
