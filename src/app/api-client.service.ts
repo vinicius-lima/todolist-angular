@@ -16,6 +16,50 @@ export class ApiClientService {
 
   constructor(private http: HttpClient) {}
 
+  createProject(project: Project): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Access-Control-Allow-Origin": "*"
+      }),
+      observe: "response" as "body"
+    };
+
+    return this.http.post<Project>(
+      this.endpoints.projects,
+      project,
+      httpOptions
+    );
+  }
+
+  deleteProject(projectId: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Access-Control-Allow-Origin": "*"
+      }),
+      observe: "response" as "body"
+    };
+
+    return this.http.delete<Project>(
+      this.endpoints.projects + `/${projectId}`,
+      httpOptions
+    );
+  }
+
+  editProject(project: Project): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Access-Control-Allow-Origin": "*"
+      }),
+      observe: "response" as "body"
+    };
+
+    return this.http.put<Project>(
+      this.endpoints.projects + `/${project.id}`,
+      project,
+      httpOptions
+    );
+  }
+
   getProject(id: number): Observable<Project> {
     const httpOptions = {
       headers: new HttpHeaders({

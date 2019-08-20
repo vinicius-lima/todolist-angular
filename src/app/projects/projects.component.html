@@ -16,15 +16,25 @@
             <a class="btn btn-primary" routerLink="/project/{{ project.id }}">
               {{ project.id }}
             </a>
+            <app-delete-project
+              [project]="project"
+              style="margin-left: 20px;"
+            ></app-delete-project>
           </td>
-          <td>{{ project.name }}</td>
+          <td>
+            <input
+              type="text"
+              value="{{ project.name }}"
+              style="border: none;"
+              (focus)="nameOnFocus($event.target)"
+              (blur)="nameOnBlur($event.target, project.id)"
+            />
+          </td>
           <td>{{ project.author }}</td>
           <td>{{ project.creationDate }}</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <button class="btn btn-success">
-    Create project
-  </button>
+  <app-create-project></app-create-project>
 </div>

@@ -1,0 +1,66 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      Create Project
+    </h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #projectForm="ngForm" autocomplete="off">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-book"></i>
+            </span>
+          </div>
+          <input
+            id="project-name"
+            name="project-name"
+            class="form-control"
+            placeholder="Name"
+            type="text"
+            [(ngModel)]="project.name"
+          />
+        </div>
+        <!-- input-group.// -->
+      </div>
+      <!-- form-group// -->
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-user-edit"></i>
+            </span>
+          </div>
+          <input
+            id="project-author"
+            name="project-author"
+            class="form-control"
+            placeholder="Author"
+            type="text"
+            [(ngModel)]="project.author"
+          />
+        </div>
+        <!-- input-group.// -->
+      </div>
+      <!-- form-group// -->
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" (click)="createProject()">
+      Create
+    </button>
+  </div>
+</ng-template>
+
+<button class="btn btn-success" (click)="open(content)">
+  Create project
+</button>
