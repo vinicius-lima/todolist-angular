@@ -25,6 +25,7 @@ export class CreateTaskComponent implements OnInit {
       title: "",
       description: "",
       author: "",
+      updatedBy: "",
       status: "TODO",
       creationDate: "",
       lastUpdate: "",
@@ -38,6 +39,7 @@ export class CreateTaskComponent implements OnInit {
       title: "",
       description: "",
       author: "",
+      updatedBy: "",
       status: "TODO",
       creationDate: "",
       lastUpdate: "",
@@ -91,6 +93,7 @@ export class CreateTaskComponent implements OnInit {
     }
     this.modalService.dismissAll("Removed");
 
+    this.task.updatedBy = this.task.author;
     this.task.creationDate = this.creationDate();
     this.task.lastUpdate = this.creationDate();
     this.apiClientService.createTask(this.task).subscribe(

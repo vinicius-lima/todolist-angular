@@ -3,6 +3,7 @@ export interface Task {
   title: string;
   description?: string;
   author: string;
+  updatedBy: string;
   status: string;
   creationDate: string;
   lastUpdate: string;
