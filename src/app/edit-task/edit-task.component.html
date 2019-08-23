@@ -77,7 +77,11 @@
       </div>
       <!-- form-group// -->
       <div class="form-group">
-        <label for="task-description">Description:</label>
+        <label for="task-description"
+          >Description. Maximum of 250 characters ({{
+            task.description.length
+          }}/250):</label
+        >
         <div class="input-group">
           <textarea
             id="task-description"
@@ -85,6 +89,7 @@
             class="form-control"
             placeholder="Description"
             rows="5"
+            maxlength="250"
             [(ngModel)]="task.description"
           ></textarea>
         </div>

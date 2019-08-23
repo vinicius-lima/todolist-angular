@@ -8,7 +8,7 @@ import { Task } from "src/models/task";
   providedIn: "root"
 })
 export class ApiClientService {
-  baseUrl = "http://192.168.1.197:5000";
+  baseUrl = "http://192.168.1.197:5001";
   endpoints = {
     projects: this.baseUrl + "/projects",
     tasks: this.baseUrl + "/tasks"
